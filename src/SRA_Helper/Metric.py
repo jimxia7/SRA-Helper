@@ -26,7 +26,7 @@ def align_and_rmsle(x1, y1, x2, y2, n_points=None):
 
     Notes
     -----
-    - Uses np.log1p(), so values must be >= -1.
+    - Uses np.log(), so value needs to be positive
     - In practice, RMSLE is usually used for nonnegative values.
     """
     
