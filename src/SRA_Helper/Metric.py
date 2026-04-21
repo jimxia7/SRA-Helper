@@ -51,11 +51,11 @@ def align_and_rmse(x1, y1, x2, y2, n_points=100):
 
     common_x = np.logspace(np.log10(xmin),
                            np.log10(xmax),
-                           (np.log10(xmax)-np.log10(xmin))*100+1)
+                           int((np.log10(xmax)-np.log10(xmin))*100)+1)
 
     y1_interp = np.interp(common_x, x1, y1)
     y2_interp = np.interp(common_x, x2, y2)
 
-    rmse = np.sqrt(np.mean(y1_interp - y2_interp) ** 2)
+    rmse = np.sqrt(np.mean((y1_interp - y2_interp) ** 2))
 
     return common_x, y1_interp, y2_interp, rmse
